@@ -1,47 +1,81 @@
-# Application Gestion Bibliotheque
+# Application Gestion Bibliothèque
 
-### Installation de l'application
+## Installation de l'application
+1. Cloner le projet sur votre machine locale  
+   ```bash
+   git clone <URL_DU_PROJET>
+Ouvrir le projet dans votre IDE préféré (IntelliJ IDEA, Eclipse, NetBeans, etc.)
 
-- Cloner le projet sur votre machine locale
-- Ouvrir le projet dans votre IDE
-- run commande `mvn clean install` pour installer les dépendances
-- run commande docker `docker-compose up` pour lancer la base de données
-- exécuter le script `./database.sql` pour créer la base de données
-- run commande `mvn spring-boot:run` pour lancer l'application
-- L'application est accessible sur console
+## Installer les dépendances Maven :
 
-### Prérequis
-- Java 17 and +
-- Maven 3.6.3
-- DOCKER
-- git 2.25.1
-- IDE (IntelliJ IDEA, Eclipse, NetBeans, etc.)
+bash
+Copier le code
+mvn clean install
+Lancer la base de données via Docker :
 
-## DIAGRAMME DE CLASSES
-![Diagramme de classes](./assets/diagramClassBookMangementLibrary.png)
+bash
+Copier le code
+docker-compose up
+Exécuter le script SQL pour créer la base de données :
+
+bash
+Copier le code
+./database.sql
+Lancer l'application Spring Boot :
+
+bash
+Copier le code
+mvn spring-boot:run
+L'application est accessible via la console.
+
+## Prérequis
+Java 17 ou supérieur
+
+Maven 3.6.3
+
+Docker
+
+Git 2.25.1
+
+IDE (IntelliJ IDEA, Eclipse, NetBeans, etc.)
+
+## Diagramme de classes
+
 
 ## Contexte
-La bibliothèque de l’université virtuelle rencontre des défis liés à une gestion manuelle des livres, entraînant :
-- Gestion inefficace : Tâches manuelles chronophages, erreurs fréquentes et suivi difficile de l’état des livres.
-- Recherche laborieuse : Absence d’un système de recherche efficace, rendant l’accès aux livres complexe pour les étudiants et le personnel.
-- Manque de statistiques : Pas de suivi clair des livres disponibles, empruntés ou perdus, limitant l’optimisation des collections.
+La bibliothèque de l’université virtuelle rencontre des défis liés à une gestion manuelle des livres :
+
+Gestion inefficace : tâches manuelles chronophages, erreurs fréquentes et suivi difficile de l’état des livres
+
+Recherche laborieuse : absence d’un système de recherche efficace, rendant l’accès aux livres complexe
+
+Manque de statistiques : pas de suivi clair des livres disponibles, empruntés ou perdus, limitant l’optimisation des collections
 
 ## Fonctionnalités
-- Gestion des livres : Ajout, mise à jour et suppression des livres via leur titre, auteur et ISBN.
-- Recherche efficace : Recherche de livres par titre ou auteur.
-- Gestion des emprunts/retours : Suivi des emprunts et retours avec mise à jour automatique de l’état des livres.
-- Rapports statistiques : Génération de rapports sur les livres disponibles, empruntés et perdus.
+Gestion des livres : ajout, mise à jour et suppression des livres via titre, auteur et ISBN
 
- ## Histoires Utilisateurs
-1. Ajouter un livre: Saisir titre, auteur et ISBN pour ajouter un livre (statut initial : disponible).
-2. Lister les livres disponibles : Afficher la liste des livres avec titre, auteur et statut.
-3. Rechercher un livre : Rechercher par titre ou auteur et afficher les résultats correspondants.
-4. Emprunter un livre : Saisir l’ISBN pour enregistrer un emprunt, mettre à jour le statut en « emprunté » et enregistrer les informations de l’emprunteur (nom, numéro d’étudiant, etc.).
-5. Retourner un livre : Saisir l’ISBN pour marquer un livre comme « disponible » et supprimer les informations d’emprunt.
-6. Lister les livres empruntés : Afficher les livres empruntés avec leurs informations (titre, auteur, emprunteur, date d’emprunt).
-7. Supprimer un livre : Supprimer un livre via son ISBN.
-8. Modifier un livre : Mettre à jour les informations (titre, auteur) d’un livre via son ISBN.
-9. Générer un rapport : Produire un rapport statistique sur les livres disponibles, empruntés et perdus.
+Recherche efficace : recherche de livres par titre ou auteur
 
+Gestion des emprunts/retours : suivi des emprunts et retours avec mise à jour automatique de l’état des livres
 
+Rapports statistiques : génération de rapports sur les livres disponibles, empruntés et perdus
+
+## Histoires Utilisateurs
+Ajouter un livre : saisir titre, auteur et ISBN (statut initial : disponible)
+
+Lister les livres disponibles : afficher la liste des livres avec titre, auteur et statut
+
+Rechercher un livre : rechercher par titre ou auteur et afficher les résultats
+
+Emprunter un livre : saisir l’ISBN pour enregistrer un emprunt, mettre à jour le statut en « emprunté » et enregistrer les informations de l’emprunteur (nom, numéro d’étudiant, etc.)
+
+Retourner un livre : saisir l’ISBN pour marquer le livre comme « disponible » et supprimer les informations d’emprunt
+
+Lister les livres empruntés : afficher les livres empruntés avec leurs informations (titre, auteur, emprunteur, date d’emprunt)
+
+Supprimer un livre : supprimer un livre via son ISBN
+
+Modifier un livre : mettre à jour les informations (titre, auteur) d’un livre via son ISBN
+
+Générer un rapport : produire un rapport statistique sur les livres disponibles, empruntés et perdus
 
